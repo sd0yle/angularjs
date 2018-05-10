@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+<head>
+  <script data-require="angular.js@1.2.6" data-semver="1.2.6" src="http://code.angularjs.org/1.2.7/angular.js"></script>
+  <link href="style.css" rel="stylesheet" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div ng-controller="FirstController">
+    <label>Enter a name:</label>
+    <input type="text" ng-model="newplanet" />
+    <button ng-click="addPlanet()">Submit</button>
+    <br><br>
+    <select id="planetList" ng-change="selectAction()"
+      ng-model="selectedPlanet"
+      multiple="multiple"
+      style="width:150px; height: 100px">
+      <option ng-repeat="planet in planets | planetarySort>">{{planet}}</option>
+    </select>
+    <br><br>
+    <div>
+      Hello {{selectedPlanet}}
+    </div>
+  </div>
+</body>
+</html>
