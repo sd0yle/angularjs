@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="Demo">
+
+  <head>
+    <script data-require="angular.js@1.2.6" data-semver="1.2.6" src="http://code.angularjs.org/1.2.6/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <h1>{{title}}</h1>
+    unfiltered
+    <ul>
+      <li ng-repeat="month in months">{{month}}</li>
+    </ul>
+    filtered
+    <ul>
+      <li ng-repeat="month in months | monthFilter">{{month}}</li>
+    </ul>
+  </body>
+
+</html>
